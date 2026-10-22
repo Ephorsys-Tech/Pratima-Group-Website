@@ -1,0 +1,71 @@
+.breadcrumb-nav {
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  padding: 0.75rem 0;
+  font-size: 0.84rem;
+}
+
+.breadcrumb-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+}
+
+.breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.breadcrumb-link {
+  color: var(--color-secondary-text);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.breadcrumb-link:hover {
+  color: var(--color-deep-gold);
+}
+
+.breadcrumb-separator {
+  color: var(--color-muted-text);
+}
+
+.breadcrumb-current {
+  color: var(--color-dark-text);
+  font-weight: 600;
+}
+
+/* Dark Hero Breadcrumb Variant */
+.breadcrumb-nav.breadcrumb-dark {
+  background-color: transparent;
+  border-bottom: none;
+  padding: 0 0 1.25rem 0;
+}
+
+.breadcrumb-nav.breadcrumb-dark .container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.breadcrumb-nav.breadcrumb-dark .breadcrumb-link {
+  color: #BBBBBB;
+}
+
+.breadcrumb-nav.breadcrumb-dark .breadcrumb-link:hover {
+  color: #C8973E;
+}
+
+.breadcrumb-nav.breadcrumb-dark .breadcrumb-separator {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.breadcrumb-nav.breadcrumb-dark .breadcrumb-current {
+  color: #C8973E;
+}
+

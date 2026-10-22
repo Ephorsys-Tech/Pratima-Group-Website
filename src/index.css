@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-brand-forest: #0D4738;
+  --color-brand-forest-dark: #07271E;
+  --color-brand-forest-light: #145C49;
+  --color-brand-emerald: #108E68;
+  --color-brand-mint-subtle: #EDF7F3;
+
+  --color-brand-gold: #C8973E;
+  --color-brand-gold-deep: #A67828;
+  --color-brand-gold-light: #E2B866;
+  --color-brand-gold-subtle: #FAF5E8;
+
+  --color-brand-white: #FFFFFF;
+  --color-brand-cream: #FAFAF7;
+  --color-brand-dark: #111827;
+  --color-brand-secondary: #4B5563;
+
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Cinzel', serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+:root {
+  /* Brand Primary Colors - Forest Green (from Logo) */
+  --color-forest: #0D4738;
+  --color-forest-dark: #07271E;
+  --color-forest-light: #145C49;
+  --color-emerald: #108E68;
+  --color-mint-subtle: #EDF7F3;
+
+  /* Brand Secondary Colors - Burnished Gold (from Logo) */
+  --color-golden-yellow: #C8973E;
+  --color-deep-gold: #A67828;
+  --color-gold-light: #E2B866;
+  --color-light-yellow: #FAF5E8;
+  --color-orange: #C8973E;
+
+  /* Surfaces & Neutrals */
+  --color-white: #FFFFFF;
+  --color-cream: #FAFAF7;
+  --color-surface-soft: #F4F8F6;
+  --color-border: #E5ECE8;
+  --color-border-gold: #EAE2D2;
+  --color-dark-text: #111827;
+  --color-secondary-text: #4B5563;
+  --color-muted-text: #6B7280;
+  --color-dark-bg: #07271E;
+  --color-darker-bg: #051A14;
+  --color-border-dark: rgba(255, 255, 255, 0.1);
+
+  /* Typography */
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Cinzel', serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Elevation Shadows with Warm Gold / Emerald Ambient Glow */
+  --shadow-sm: 0 2px 6px rgba(13, 71, 56, 0.04);
+  --shadow-md: 0 6px 20px rgba(13, 71, 56, 0.07), 0 2px 6px rgba(200, 151, 62, 0.05);
+  --shadow-lg: 0 16px 36px rgba(13, 71, 56, 0.10), 0 4px 14px rgba(200, 151, 62, 0.08);
+  --shadow-gold: 0 8px 24px rgba(200, 151, 62, 0.32);
+  --shadow-gold-hover: 0 12px 28px rgba(166, 120, 40, 0.42);
+  --shadow-forest: 0 8px 24px rgba(13, 71, 56, 0.35);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  --transition-fast: 0.18s ease;
+  --transition-normal: 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--color-dark-text);
+  background-color: var(--color-cream);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* Common Layout Containers */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.badge-gold {
+  background-color: var(--color-light-yellow);
+  color: var(--color-deep-gold);
+  border: 1px solid rgba(200, 151, 62, 0.4);
+}
+
+.badge-forest {
+  background-color: var(--color-mint-subtle);
+  color: var(--color-forest);
+  border: 1px solid rgba(13, 71, 56, 0.3);
+}
+
+.badge-orange {
+  background-color: #FAF5E8;
+  color: #A67828;
+  border: 1px solid rgba(200, 151, 62, 0.35);
+}
+
+.badge-dark {
+  background-color: var(--color-forest-dark);
+  color: var(--color-white);
+}
+
+.badge-launching {
+  background: linear-gradient(135deg, #FAF5E8 0%, #F5ECCF 100%);
+  color: #A67828;
+  border: 1px solid #D4A347;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(200, 151, 62, 0.18);
+}
+
+/* Modern Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.6rem;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+  line-height: 1.2;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Primary Button - Burnished Gold */
+.btn-primary {
+  background: linear-gradient(135deg, #C8973E 0%, #B3812C 100%);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-gold);
+  border: 1px solid #A67828;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #D4A347 0%, #C8973E 100%);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-gold-hover);
+  transform: translateY(-2px);
+}
+
+/* Forest Green Button */
+.btn-forest {
+  background: linear-gradient(135deg, #0D4738 0%, #07271E 100%);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-forest);
+  border: 1px solid #145C49;
+}
+
+.btn-forest:hover {
+  background: linear-gradient(135deg, #145C49 0%, #0D4738 100%);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(13, 71, 56, 0.45);
+}
+
+.btn-secondary {
+  background-color: var(--color-white);
+  color: var(--color-dark-text);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-golden-yellow);
+  background-color: var(--color-light-yellow);
+  color: var(--color-forest);
+  transform: translateY(-2px);
+}
+
+.btn-dark {
+  background-color: var(--color-forest-dark);
+  color: var(--color-white);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.btn-dark:hover {
+  background-color: #04140F;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-whatsapp {
+  background-color: #25D366;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+.btn-whatsapp:hover {
+  background-color: #20BD5A;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+}
+
+.btn-lg {
+  padding: 0.95rem 2.2rem;
+  font-size: 1.05rem;
+  border-radius: var(--radius-lg);
+}
+
+.card-premium {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  overflow: hidden;
+}
+
+.card-premium:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(200, 151, 62, 0.5);
+}
+
+.page-hero {
+  background: linear-gradient(180deg, #EDF7F3 0%, #FAFAF7 100%);
+  padding: 4.5rem 0 3.5rem;
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+}

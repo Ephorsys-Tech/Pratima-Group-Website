@@ -1,0 +1,521 @@
+/* ==========================================================================
+   MACHINE CARD - HIGH-PRECISION INDUSTRIAL DESIGN SYSTEM (v2)
+   ========================================================================== */
+
+.machine-card-v2 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #FFFFFF;
+  border: 1px solid #EAE4D3;
+  border-radius: 1.125rem;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(37, 37, 37, 0.04);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.3s ease;
+  container-type: inline-size;
+  container-name: card;
+}
+
+.machine-card-v2:hover {
+  transform: translateY(-5px);
+  border-color: rgba(244, 180, 0, 0.65);
+  box-shadow: 0 16px 36px -10px rgba(244, 180, 0, 0.22), 
+              0 6px 16px rgba(37, 37, 37, 0.06);
+}
+
+/* --------------------------------------------------------------------------
+   Top Media Showcase
+   -------------------------------------------------------------------------- */
+.card-media-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  background: #252525;
+}
+
+@media (min-width: 640px) and (max-width: 1024px) {
+  .card-media-wrap {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+.card-media-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.machine-card-v2:hover .card-media-img {
+  transform: scale(1.08);
+}
+
+.card-media-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg, 
+    rgba(20, 20, 20, 0.45) 0%, 
+    transparent 35%, 
+    transparent 55%, 
+    rgba(15, 15, 15, 0.85) 100%
+  );
+  z-index: 1;
+}
+
+/* Floating Top Badges */
+.card-top-badges {
+  position: absolute;
+  top: 0.65rem;
+  left: 0.65rem;
+  right: 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  z-index: 2;
+}
+
+.badge-model-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(20, 20, 20, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  padding: 0.25rem 0.55rem;
+  border-radius: 9999px;
+  font-family: var(--font-heading), monospace;
+  font-size: 0.725rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
+}
+
+.live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background-color: #10B981;
+  box-shadow: 0 0 6px #10B981;
+  animation: pulseDot 2s infinite ease-in-out;
+  flex-shrink: 0;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+.badge-drive-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 9999px;
+  font-size: 0.675rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+}
+
+.badge-drive-pill.drive-crank {
+  background: rgba(242, 140, 40, 0.95);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.badge-drive-pill.drive-hydraulic {
+  background: rgba(217, 154, 0, 0.95);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* Floating Bottom Capacity Banner */
+.card-bottom-capacity {
+  position: absolute;
+  bottom: 0.65rem;
+  left: 0.65rem;
+  right: 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  z-index: 2;
+}
+
+.capacity-badge {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  background: linear-gradient(135deg, #F4B400 0%, #E5AA00 100%);
+  color: #1E1E1E;
+  padding: 0.25rem 0.65rem;
+  border-radius: 0.45rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  white-space: nowrap;
+}
+
+.capacity-value {
+  font-family: var(--font-heading), sans-serif;
+  font-weight: 800;
+  font-size: 0.8125rem;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.capacity-label {
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  opacity: 0.85;
+}
+
+.factory-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.625rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 0.2rem 0.45rem;
+  border-radius: 0.35rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   Card Body Area
+   -------------------------------------------------------------------------- */
+.card-body-wrap {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background: #FFFFFF;
+}
+
+@media (min-width: 640px) {
+  .card-body-wrap {
+    padding: 1.15rem 1rem 1rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .card-body-wrap {
+    padding: 1.25rem 1.15rem 1.15rem;
+  }
+}
+
+/* Category Row */
+.card-category-row {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.35rem;
+}
+
+.category-accent-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background-color: #D99A00;
+  flex-shrink: 0;
+}
+
+.category-name {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #D99A00;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.category-spm-chip {
+  font-size: 0.625rem;
+  font-weight: 700;
+  color: #666666;
+  background: #FFF8E6;
+  border: 1px solid rgba(244, 180, 0, 0.3);
+  padding: 0.12rem 0.4rem;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+/* Title */
+.card-machine-title {
+  font-family: var(--font-heading), sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 0.45rem;
+  min-height: 2.8rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.title-link {
+  color: #252525;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.machine-card-v2:hover .title-link {
+  color: #D99A00;
+}
+
+/* Description */
+.card-machine-desc {
+  font-size: 0.8rem;
+  color: #666666;
+  line-height: 1.45;
+  margin-bottom: 0.85rem;
+  min-height: 2.35rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   Engineering Spec Matrix (Compact & High Contrast)
+   -------------------------------------------------------------------------- */
+.card-specs-matrix {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.45rem;
+  background: #FFFDF7;
+  border: 1px solid #ECE4CE;
+  border-radius: 0.75rem;
+  padding: 0.55rem;
+  margin-bottom: 0.85rem;
+}
+
+.spec-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  padding: 0.3rem 0.4rem;
+  background: #FFFFFF;
+  border-radius: 0.45rem;
+  border: 1px solid #F1EADC;
+  min-width: 0;
+}
+
+.spec-cell-header {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.spec-icon {
+  flex-shrink: 0;
+}
+
+.spec-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #8C8270;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.spec-val {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #252525;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* --------------------------------------------------------------------------
+   Approved Quotation Strip
+   -------------------------------------------------------------------------- */
+.card-price-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.55rem 0.75rem;
+  background: #F9FAFB;
+  border: 1px dashed #D5D9DE;
+  border-radius: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.price-details {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.price-eyebrow {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #71717A;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.price-amount {
+  font-family: var(--font-heading), sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #18181B;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.price-badge-tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #52525B;
+  background: #FFFFFF;
+  border: 1px solid #E4E4E7;
+  padding: 0.18rem 0.45rem;
+  border-radius: 0.35rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Action Buttons - Fully Responsive & Anti-Wrap
+   -------------------------------------------------------------------------- */
+.card-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: auto;
+  width: 100%;
+}
+
+.card-btn-primary {
+  flex: 1;
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  background: #F4B400;
+  color: #1E1E1E;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  padding: 0.6rem 0.65rem;
+  border-radius: 0.625rem;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(244, 180, 0, 0.28);
+  border: 1px solid #D99A00;
+  transition: all 0.25s ease;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.card-btn-primary:hover {
+  background: #D99A00;
+  color: #FFFFFF;
+  box-shadow: 0 6px 18px rgba(217, 154, 0, 0.38);
+  transform: translateY(-1px);
+}
+
+.btn-specs-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.action-arrow {
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.card-btn-primary:hover .action-arrow {
+  transform: translateX(3px);
+}
+
+.card-btn-whatsapp {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  background: #25D366;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.625rem;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.22);
+  transition: all 0.25s ease;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.card-btn-whatsapp:hover {
+  background: #20BD5A;
+  color: #FFFFFF;
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.35);
+  transform: translateY(-1px);
+}
+
+.whatsapp-btn-label {
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   Container Query Responsive Adaptation
+   -------------------------------------------------------------------------- */
+@container card (max-width: 230px) {
+  .whatsapp-btn-label {
+    display: none;
+  }
+  .card-btn-whatsapp {
+    padding: 0.6rem 0.65rem;
+  }
+  .card-btn-primary {
+    padding: 0.6rem 0.5rem;
+    font-size: 0.775rem;
+  }
+}
+
+/* Mobile fine-tuning */
+@media (max-width: 480px) {
+  .card-machine-title {
+    font-size: 1.025rem;
+    min-height: 2.6rem;
+  }
+  
+  .card-specs-matrix {
+    gap: 0.35rem;
+    padding: 0.45rem;
+  }
+  
+  .spec-val {
+    font-size: 0.725rem;
+  }
+}
