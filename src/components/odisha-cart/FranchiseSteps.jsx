@@ -25,7 +25,7 @@ export default function FranchiseSteps() {
     {
       num: "04",
       title: "Grand Launch & Continuous Supply",
-      desc: "Inaugurate your Odisha Cart store with group promotional campaigns, influencer visits, and daily distributor replenishment.",
+      desc: "Inaugurate your Odisha Kart store with group promotional campaigns, influencer visits, and daily distributor replenishment.",
       icon: <Rocket size={22} className="text-[#D99A00]" />
     }
   ];
@@ -38,7 +38,7 @@ export default function FranchiseSteps() {
             Structured Onboarding
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#252525] font-['Outfit']">
-            4 Simple Steps to Own an Odisha Cart Franchise
+            4 Simple Steps to Own an Odisha Kart Franchise
           </h2>
           <p className="text-[#666666] mt-2">
             From initial application to grand opening in less than 30 business days.
@@ -47,7 +47,7 @@ export default function FranchiseSteps() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {steps.map((step, idx) => (
-            <div 
+            <div
               key={idx}
               className="p-7 rounded-2xl bg-[#FFFDF5] border border-[#EFE8D6] relative flex flex-col justify-between"
             >

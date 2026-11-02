@@ -38,7 +38,7 @@ export default function FranchiseOverview() {
             <span>Turnkey Business Opportunity</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#252525] font-['Outfit']">
-            The Odisha Cart Franchise Model
+            The Odisha Kart Franchise Model
           </h2>
           <p className="text-[#666666] mt-2">
             A high-demand, community-anchored business model built for enterprising individuals, women entrepreneurs, and retail investors across Odisha.

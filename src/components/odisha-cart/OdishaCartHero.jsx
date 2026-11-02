@@ -19,7 +19,7 @@ export default function OdishaCartHero() {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="max-w-3xl">
-          
+
           {/* Pill Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-[#10B981]/50 text-white shadow-md mb-4 sm:mb-6">
             <ShoppingBag size={15} className="text-[#10B981]" />
@@ -30,7 +30,7 @@ export default function OdishaCartHero() {
 
           {/* Headline */}
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15] mb-4 sm:mb-6 font-['Outfit'] drop-shadow-md">
-            Odisha Cart — <br />
+            Odisha Kart — <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E2B866] via-[#C8973E] to-[#F1CF88]">
               Empowering Local Commerce
             </span>
@@ -43,16 +43,16 @@ export default function OdishaCartHero() {
 
           {/* Action CTAs */}
           <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-8 sm:mb-10">
-            <a 
-              href="#franchise" 
+            <a
+              href="#franchise"
               className="btn btn-primary shadow-lg hover:shadow-xl py-3 px-6 text-sm sm:text-base font-bold flex items-center gap-2"
             >
               <span>Franchise Opportunities</span>
               <ArrowRight size={16} />
             </a>
 
-            <Link 
-              to="/contact" 
+            <Link
+              to="/contact"
               className="btn btn-secondary bg-white/10 hover:bg-white text-white hover:text-[#0D4738] border-white/20 hover:border-white backdrop-blur-md transition-all py-3 px-6 text-sm sm:text-base font-bold"
             >
               <span>Distributor Registration</span>

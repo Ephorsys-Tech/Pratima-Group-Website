@@ -9,7 +9,7 @@ export default function RestaurantConcept() {
     },
     {
       title: "Direct Farm-to-Table Freshness",
-      desc: "Sourcing organically cultivated native spices, cold-pressed oils, and fresh grains directly through Pratima Group's Odisha Cart farmer network."
+      desc: "Sourcing organically cultivated native spices, cold-pressed oils, and fresh grains directly through Pratima Group's Odisha Kart farmer network."
     },
     {
       title: "Artisanal Odia Architecture",
@@ -38,7 +38,7 @@ export default function RestaurantConcept() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {pillars.map((pillar, idx) => (
-            <div 
+            <div
               key={idx}
               className="p-8 rounded-2xl bg-[#FFFDF5] border border-[#EFE8D6] shadow-sm flex items-start gap-5"
             >

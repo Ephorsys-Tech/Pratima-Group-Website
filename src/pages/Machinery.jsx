@@ -6,7 +6,7 @@ import CTASection from '../components/common/CTASection';
 import MachineryHero from '../components/machinery/MachineryHero';
 import MachineryFilterBar from '../components/machinery/MachineryFilterBar';
 import CustomMachineBanner from '../components/machinery/CustomMachineBanner';
-import { machineryList } from '../../src/data/machineryData';
+import { machineryList } from '../data/machineryData';
 
 export default function Machinery() {
   const [selectedFilter, setSelectedFilter] = useState('All');
@@ -21,14 +21,20 @@ export default function Machinery() {
 
   const filteredMachines = useMemo(() => {
     return machineryList.filter((machine) => {
-      const matchesType = selectedFilter === 'All' ? true : machine.driveType === selectedFilter;
+      let matchesType = true;
+      if (selectedFilter === 'Crank') {
+        matchesType = machine.driveType === 'Crank';
+      } else if (selectedFilter === 'Hydraulic') {
+        matchesType = machine.driveType === 'Hydraulic';
+      }
+
       const query = searchQuery.toLowerCase().trim();
       const matchesSearch =
         !query ||
         machine.modelCode.toLowerCase().includes(query) ||
         machine.name.toLowerCase().includes(query) ||
         machine.capacity.toLowerCase().includes(query) ||
-        machine.category.toLowerCase().includes(query);
+        machine.driveType.toLowerCase().includes(query);
 
       return matchesType && matchesSearch;
     });
@@ -39,7 +45,7 @@ export default function Machinery() {
       <Breadcrumb items={breadcrumbItems} />
       <MachineryHero />
 
-      <section className="py-16 bg-[#FFFDF5]">
+      <section className="py-12 sm:py-16 bg-[#FFFDF5]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <MachineryFilterBar
             selectedFilter={selectedFilter}
@@ -51,16 +57,15 @@ export default function Machinery() {
             hydraulicCount={hydraulicCount}
           />
 
-          <div className="flex items-center justify-between mb-8 text-sm text-[#666666]">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6 sm:mb-8 text-xs sm:text-sm text-[#666666]">
             <span>
-              Showing <strong className="text-[#252525]">{filteredMachines.length}</strong> of {machineryList.length} AEW models
-              {selectedFilter !== 'All' && ` (${selectedFilter} Drive)`}
+              Showing <strong className="text-[#0D4738]">{filteredMachines.length}</strong> of {machineryList.length} Official AEW Paper Plate Machine Models
             </span>
-            <span className="text-xs text-[#888]">All models available for factory inspection at Mancheswar</span>
+            <span className="text-[11px] text-[#888]">Approved by Govt. of Odisha DIC, Angul (Regd No: 210151100297)</span>
           </div>
 
           {filteredMachines.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 xl:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 xl:gap-6">
               {filteredMachines.map((machine) => (
                 <MachineCard key={machine.id} machine={machine} />
               ))}

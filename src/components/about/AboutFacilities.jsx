@@ -43,8 +43,8 @@ export default function AboutFacilities() {
 
                 <p className="text-xs text-[#888888] mb-6 leading-relaxed">
                   {idx === 0 
-                    ? "Housing precision machining bays, crankshaft grinding lathes, dynamic balancing rigs, electrical control panel wiring, and corporate administration."
-                    : "Equipped with high-capacity overhead gantry cranes, heavy plate bending rolls, submerged arc welding, and hydraulic power pack assembly units."
+                    ? "Headquarters housing small scale industrial machine fabrication, assembly bays for Crank & Hydraulic paper plate units, technical testing, and administrative oversight."
+                    : "Capital executive center managing statewide distribution, Smart Collection retail logistics, franchisee onboarding, and client consultation."
                   }
                 </p>
               </div>

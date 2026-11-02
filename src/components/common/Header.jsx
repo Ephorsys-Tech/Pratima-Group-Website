@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { 
-  ChevronDown, 
-  Phone, 
-  Cog, 
-  ShoppingBag, 
-  UtensilsCrossed, 
-  Layers, 
+import {
+  ChevronDown,
+  Phone,
+  Cog,
+  ShoppingBag,
+  UtensilsCrossed,
+  Layers,
   ArrowRight,
   ShieldCheck,
   Menu,
@@ -16,7 +16,6 @@ import {
 } from 'lucide-react';
 import { companyData } from '../../data/companyData';
 import WhatsAppIcon from './WhatsAppIcon';
-import './Header.css';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -51,10 +50,10 @@ export default function Header() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const isBusinessActive = 
-    location.pathname.startsWith('/businesses') || 
-    location.pathname.startsWith('/machinery') || 
-    location.pathname === '/odisha-cart' || 
+  const isBusinessActive =
+    location.pathname.startsWith('/businesses') ||
+    location.pathname.startsWith('/machinery') ||
+    location.pathname === '/odisha-cart' ||
     location.pathname === '/restaurant';
 
   return (
@@ -70,23 +69,23 @@ export default function Header() {
             <span className="text-[#145C49]">•</span>
             <div className="flex items-center gap-1 text-[#9CA3AF]">
               <MapPin size={11} className="text-[#C8973E]" />
-              <span>Mancheswar & Khurda, Odisha</span>
+              <span>Kosala, Angul & Bhubaneswar, Odisha</span>
             </div>
           </div>
 
           <div className="flex items-center gap-4">
-            <a 
-              href={`tel:${companyData.contacts.primaryPhone.replace(/\s+/g, '')}`} 
+            <a
+              href={`tel:${companyData.contacts.primaryPhone.replace(/\s+/g, '')}`}
               className="flex items-center gap-1.5 text-white hover:text-[#C8973E] transition-colors"
             >
               <Phone size={11} className="text-[#C8973E]" />
               <span>{companyData.contacts.primaryPhone}</span>
             </a>
             <span className="text-[#145C49]">•</span>
-            <a 
-              href={`https://wa.me/${companyData.contacts.whatsappNumber}?text=${encodeURIComponent('Hello Pratima Group, I would like to make an enquiry.')}`} 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href={`https://wa.me/${companyData.contacts.whatsappNumber}?text=${encodeURIComponent('Hello Pratima Group, I would like to make an enquiry.')}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-[#10B981] hover:text-[#34D399] font-medium transition-colors"
             >
               <WhatsAppIcon size={12} color="currentColor" />
@@ -97,43 +96,40 @@ export default function Header() {
       </div>
 
       {/* Main Modern Sticky Header */}
-      <header className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-[0_4px_25px_rgba(13,71,56,0.08)] border-b border-[#E5ECE8] py-2 sm:py-2.5' 
+      <header className={`site-header sticky top-0 z-50 transition-all duration-300 ${scrolled
+          ? 'bg-white/95 backdrop-blur-md shadow-[0_4px_25px_rgba(13,71,56,0.08)] border-b border-[#E5ECE8] py-2 sm:py-2.5'
           : 'bg-white/95 backdrop-blur-sm border-b border-[#E5ECE8]/80 py-2.5 sm:py-3.5'
-      }`}>
+        }`}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          
+
           {/* Brand Logo - Official Prominent High-Resolution Logo */}
           <Link to="/" className="flex items-center group py-0.5" aria-label="Pratima Group of Industries">
-            <img 
-              src="/mylogo/logo.png" 
-              alt="Pratima Group of Industries" 
+            <img
+              src="/mylogo/logo.png"
+              alt="Pratima Group of Industries"
               className="h-13 sm:h-15 md:h-16 w-auto object-contain transition-transform duration-200 group-hover:scale-105 drop-shadow-xs"
             />
           </Link>
 
           {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center gap-1 bg-[#F8FAF9] p-1.5 rounded-full border border-[#E5ECE8] shadow-xs">
-            <NavLink 
-              to="/" 
-              className={({ isActive }) => `px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 ${
-                isActive 
-                  ? 'bg-[#0D4738] text-white shadow-xs' 
+            <NavLink
+              to="/"
+              className={({ isActive }) => `px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 ${isActive
+                  ? 'bg-[#0D4738] text-white shadow-xs'
                   : 'text-[#4B5563] hover:text-[#0D4738] hover:bg-white'
-              }`}
+                }`}
               end
             >
               Home
             </NavLink>
 
-            <NavLink 
-              to="/about" 
-              className={({ isActive }) => `px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 ${
-                isActive 
-                  ? 'bg-[#0D4738] text-white shadow-xs' 
+            <NavLink
+              to="/about"
+              className={({ isActive }) => `px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 ${isActive
+                  ? 'bg-[#0D4738] text-white shadow-xs'
                   : 'text-[#4B5563] hover:text-[#0D4738] hover:bg-white'
-              }`}
+                }`}
             >
               About Us
             </NavLink>
@@ -143,11 +139,10 @@ export default function Header() {
               <button
                 type="button"
                 onClick={() => setBusinessesDropdownOpen(!businessesDropdownOpen)}
-                className={`px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 flex items-center gap-1.5 cursor-pointer ${
-                  isBusinessActive || businessesDropdownOpen
-                    ? 'bg-gradient-to-r from-[#C8973E] to-[#B3812C] text-white shadow-xs' 
+                className={`px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 flex items-center gap-1.5 cursor-pointer ${isBusinessActive || businessesDropdownOpen
+                    ? 'bg-gradient-to-r from-[#C8973E] to-[#B3812C] text-white shadow-xs'
                     : 'text-[#4B5563] hover:text-[#0D4738] hover:bg-white'
-                }`}
+                  }`}
                 aria-expanded={businessesDropdownOpen}
               >
                 <span>Businesses</span>
@@ -191,7 +186,7 @@ export default function Header() {
                       <div className="flex-1">
                         <div className="flex items-center justify-between">
                           <span className="font-bold text-sm text-[#111827] group-hover:text-[#108E68]">
-                            Odisha Cart
+                            Odisha Kart
                           </span>
                           <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#E6F9F2] text-[#059669]">
                             Franchise
@@ -241,13 +236,12 @@ export default function Header() {
               )}
             </div>
 
-            <NavLink 
-              to="/contact" 
-              className={({ isActive }) => `px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-200 ${
-                isActive 
-                  ? 'bg-[#0D4738] text-white shadow-xs' 
+            <NavLink
+              to="/contact"
+              className={({ isActive }) => `px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-200 ${isActive
+                  ? 'bg-[#0D4738] text-white shadow-xs'
                   : 'text-[#4B5563] hover:text-[#0D4738] hover:bg-white'
-              }`}
+                }`}
             >
               Contact
             </NavLink>
@@ -255,8 +249,8 @@ export default function Header() {
 
           {/* Header Action CTAs */}
           <div className="flex items-center gap-2.5">
-            <Link 
-              to="/contact" 
+            <Link
+              to="/contact"
               className="hidden sm:inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full font-bold text-xs sm:text-sm bg-gradient-to-r from-[#C8973E] to-[#B3812C] text-white hover:from-[#D4A347] hover:to-[#C8973E] shadow-[0_3px_12px_rgba(200,151,62,0.3)] hover:shadow-[0_5px_16px_rgba(166,120,40,0.4)] transform hover:-translate-y-0.5 transition-all duration-200"
             >
               <span>Contact Us</span>
@@ -280,23 +274,21 @@ export default function Header() {
         {mobileMenuOpen && (
           <div className="lg:hidden bg-white border-b border-[#E5ECE8] shadow-xl animate-in slide-in-from-top-4 duration-200">
             <div className="container mx-auto px-4 py-6 space-y-4">
-              
+
               <div className="flex flex-col space-y-1">
-                <NavLink 
-                  to="/" 
-                  className={({ isActive }) => `px-4 py-3 rounded-xl font-bold text-sm ${
-                    isActive ? 'bg-[#EDF7F3] text-[#0D4738]' : 'text-[#111827] hover:bg-[#F8FAF9]'
-                  }`}
+                <NavLink
+                  to="/"
+                  className={({ isActive }) => `px-4 py-3 rounded-xl font-bold text-sm ${isActive ? 'bg-[#EDF7F3] text-[#0D4738]' : 'text-[#111827] hover:bg-[#F8FAF9]'
+                    }`}
                   end
                 >
                   Home
                 </NavLink>
 
-                <NavLink 
-                  to="/about" 
-                  className={({ isActive }) => `px-4 py-3 rounded-xl font-bold text-sm ${
-                    isActive ? 'bg-[#EDF7F3] text-[#0D4738]' : 'text-[#111827] hover:bg-[#F8FAF9]'
-                  }`}
+                <NavLink
+                  to="/about"
+                  className={({ isActive }) => `px-4 py-3 rounded-xl font-bold text-sm ${isActive ? 'bg-[#EDF7F3] text-[#0D4738]' : 'text-[#111827] hover:bg-[#F8FAF9]'
+                    }`}
                 >
                   About Pratima Group
                 </NavLink>
@@ -330,7 +322,7 @@ export default function Header() {
                       <div className="w-8 h-8 rounded-lg bg-[#EDF7F3] text-[#108E68] flex items-center justify-center">
                         <ShoppingBag size={16} />
                       </div>
-                      <span className="text-sm font-bold text-[#111827]">Odisha Cart Franchise</span>
+                      <span className="text-sm font-bold text-[#111827]">Odisha Kart Franchise</span>
                     </div>
                     <ArrowRight size={14} className="text-[#C8973E]" />
                   </Link>
@@ -353,19 +345,18 @@ export default function Header() {
               </div>
 
               <div className="pt-2 border-t border-[#E5ECE8] flex flex-col gap-2">
-                <NavLink 
-                  to="/contact" 
-                  className={({ isActive }) => `px-4 py-3 rounded-xl font-bold text-sm ${
-                    isActive ? 'bg-[#EDF7F3] text-[#0D4738]' : 'text-[#111827] hover:bg-[#F8FAF9]'
-                  }`}
+                <NavLink
+                  to="/contact"
+                  className={({ isActive }) => `px-4 py-3 rounded-xl font-bold text-sm ${isActive ? 'bg-[#EDF7F3] text-[#0D4738]' : 'text-[#111827] hover:bg-[#F8FAF9]'
+                    }`}
                 >
                   Contact Us
                 </NavLink>
 
-                <a 
-                  href={`https://wa.me/${companyData.contacts.whatsappNumber}`} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href={`https://wa.me/${companyData.contacts.whatsappNumber}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn btn-whatsapp w-full justify-center py-3 text-sm font-bold rounded-xl mt-2"
                 >
                   <WhatsAppIcon size={18} color="#FFFFFF" />

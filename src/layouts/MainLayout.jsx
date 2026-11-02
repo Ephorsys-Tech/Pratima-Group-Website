@@ -7,10 +7,10 @@ import FloatingWhatsApp from '../components/common/FloatingWhatsApp';
 
 export default function MainLayout() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#FFFDF5] text-[#252525]">
+    <div className="min-h-screen flex flex-col bg-[#FFFDF5] text-[#252525] w-full max-w-full">
       <ScrollToTop />
       <Header />
-      <main className="flex-1 w-full">
+      <main className="flex-1 w-full max-w-full overflow-x-clip">
         <Outlet />
       </main>
       <Footer />
