@@ -36,24 +36,24 @@ export default function NotFoundContent() {
           Popular Destinations
         </span>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-          <Link 
-            to="/machinery" 
+          <Link
+            to="/machinery"
             className="p-3 rounded-xl bg-[#FFFDF5] border border-[#EFE8D6] hover:border-[#F4B400] text-xs font-bold text-[#252525] hover:text-[#D99A00] flex items-center justify-center gap-2 transition-colors"
           >
             <Cog size={15} />
             <span>AEW Machinery</span>
           </Link>
 
-          <Link 
-            to="/odisha-cart" 
+          <Link
+            to="/odisha-cart"
             className="p-3 rounded-xl bg-[#FFFDF5] border border-[#EFE8D6] hover:border-[#F4B400] text-xs font-bold text-[#252525] hover:text-[#D99A00] flex items-center justify-center gap-2 transition-colors"
           >
             <ShoppingBag size={15} />
-            <span>Odisha Cart</span>
+            <span>Odisha Kart</span>
           </Link>
 
-          <Link 
-            to="/about" 
+          <Link
+            to="/about"
             className="p-3 rounded-xl bg-[#FFFDF5] border border-[#EFE8D6] hover:border-[#F4B400] text-xs font-bold text-[#252525] hover:text-[#D99A00] flex items-center justify-center gap-2 transition-colors col-span-2 sm:col-span-1"
           >
             <span>About Pratima</span>

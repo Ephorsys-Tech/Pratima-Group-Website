@@ -46,7 +46,7 @@ export default function RetailCategories() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {categories.map((cat, idx) => (
-            <div 
+            <div
               key={idx}
               className="p-7 rounded-2xl bg-[#FFFDF5] border border-[#EFE8D6] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between"
             >
@@ -71,7 +71,7 @@ export default function RetailCategories() {
         {/* Informational note clarifying no online shopping */}
         <div className="mt-12 p-4 rounded-xl bg-[#FFF9E6] border border-[#F4B400]/30 text-center max-w-2xl mx-auto">
           <p className="text-xs text-[#805B00] font-medium">
-            ℹ️ <strong>Retail Stores Note:</strong> Products are available exclusively in-store across verified Odisha Cart franchise storefronts and partner retail networks. (No online retail cart or direct checkout).
+            ℹ️ <strong>Retail Stores Note:</strong> Products are available exclusively in-store across verified Odisha Kart franchise storefronts and partner retail networks. (No online retail cart or direct checkout).
           </p>
         </div>
       </div>

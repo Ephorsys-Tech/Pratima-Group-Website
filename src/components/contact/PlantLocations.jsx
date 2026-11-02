@@ -1,58 +1,59 @@
 import React from 'react';
-import { MapPin, Building, Navigation } from 'lucide-react';
+import { MapPin, Building, Navigation, ShieldCheck } from 'lucide-react';
 import { companyData } from '../../data/companyData';
 
 export default function PlantLocations() {
   return (
-    <div className="mt-16">
-      <div className="text-center max-w-2xl mx-auto mb-12">
-        <span className="text-xs font-bold text-[#D99A00] uppercase tracking-wider block mb-1">
-          In-Person Visits & Factory Inspections
+    <div className="mt-12 sm:mt-16">
+      <div className="text-center max-w-2xl mx-auto mb-10">
+        <span className="text-xs font-bold text-[#C8973E] uppercase tracking-wider block mb-1 font-['Outfit']">
+          Verified Registered Locations • Odisha
         </span>
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-[#252525] font-['Outfit']">
-          Visit Our Operational Plants in Odisha
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-[#111827] font-['Outfit']">
+          Visit Our Registered Headquarters & Plants
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
         {companyData.locations.map((loc, idx) => (
-          <div key={idx} className="bg-white p-8 rounded-2xl border border-[#EFE8D6] shadow-sm flex flex-col justify-between">
+          <div key={idx} className="bg-white p-6 sm:p-8 rounded-3xl border border-[#E5ECE8] shadow-[0_4px_20px_rgba(13,71,56,0.05)] flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-4">
-                <span className="badge badge-gold">
-                  {idx === 0 ? "Corporate Office & Plant 1" : "Heavy Works & Plant 2"}
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#FAF5E8] text-[#A67828] border border-[#C8973E]/30 font-['Outfit']">
+                  <ShieldCheck size={13} className="text-[#C8973E]" />
+                  {idx === 0 ? "Registered Head Office" : "Distribution & Logistics Center"}
                 </span>
-                <span className="text-xs text-[#888888] font-mono">
+                <span className="text-xs text-gray-500 font-mono">
                   {loc.city}, Odisha
                 </span>
               </div>
 
-              <h3 className="text-xl font-bold text-[#252525] mb-2 font-['Outfit']">
+              <h3 className="text-lg sm:text-xl font-bold text-[#111827] mb-2 font-['Outfit']">
                 {loc.title}
               </h3>
 
-              <div className="flex items-start gap-3 text-sm text-[#666666] mb-4">
-                <MapPin size={18} className="text-[#D99A00] shrink-0 mt-0.5" />
+              <div className="flex items-start gap-2.5 text-xs sm:text-sm text-gray-700 mb-4">
+                <MapPin size={17} className="text-[#C8973E] shrink-0 mt-0.5" />
                 <span>{loc.address}, {loc.city}, {loc.state} - {loc.pincode}</span>
               </div>
 
-              <p className="text-xs text-[#888888] mb-6 leading-relaxed">
+              <p className="text-xs text-gray-500 mb-6 leading-relaxed">
                 {idx === 0 
-                  ? "Landmark: Mancheswar Industrial Estate, Sector-A. Easy access via Bhubaneswar NH-16 bypass road."
-                  : "Landmark: Khurda Industrial Estate, near National Highway corridor. Equipped with high-clearance truck bays."}
+                  ? "Approved by Govt. of Odisha DIC, Angul (Regd No: 210151100297). GSTIN: 21BIKPM0732J1ZH (M/s Pratima Enterprises). Contact: 1800-212-0-211."
+                  : "Executive facility and supply chain logistics hub supporting regional franchise replenishment and dispatch."}
               </p>
             </div>
 
-            <div className="pt-4 border-t border-[#EFE8D6] flex items-center justify-between text-xs">
-              <span className="text-[#666666]">Visitors: Prior appointment recommended</span>
+            <div className="pt-4 border-t border-gray-100 flex items-center justify-between text-xs">
+              <span className="text-gray-500">Prior appointment recommended</span>
               <a 
                 href={`https://maps.google.com/?q=${encodeURIComponent(`${loc.title}, ${loc.address}, ${loc.city}`)}`} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="font-bold text-[#D99A00] hover:underline flex items-center gap-1"
+                className="font-bold text-[#0D4738] hover:text-[#C8973E] flex items-center gap-1 transition-colors"
               >
                 <Navigation size={13} />
-                <span>Open in Google Maps</span>
+                <span>Open in Maps</span>
               </a>
             </div>
           </div>
