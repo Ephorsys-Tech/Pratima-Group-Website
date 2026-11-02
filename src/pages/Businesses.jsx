@@ -11,8 +11,7 @@ export default function Businesses() {
   ];
 
   return (
-    <div className="businesses-page w-full">
-       <Breadcrumb items={breadcrumbItems} />
+    <div className="businesses-page w-full max-w-full overflow-x-hidden">
       <BusinessesHero />
       <BusinessesList />
       <SynergyModel />

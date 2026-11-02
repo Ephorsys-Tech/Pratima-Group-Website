@@ -21,7 +21,10 @@ export default function HomeFeaturedMachinery() {
   const scrollRef = useRef(null);
 
   // Filter machines based on active tab
-  const allFeatured = machineryList.filter(m => m.isFeatured);
+  const allFeatured = machineryList;
+  const crankMachines = allFeatured.filter(m => m.driveType === 'Crank');
+  const hydraulicMachines = allFeatured.filter(m => m.driveType === 'Hydraulic');
+
   const filteredMachines = allFeatured.filter(machine => {
     if (activeTab === 'Crank') return machine.driveType === 'Crank';
     if (activeTab === 'Hydraulic') return machine.driveType === 'Hydraulic';
@@ -80,17 +83,17 @@ export default function HomeFeaturedMachinery() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-12 gap-6">
           <div className="max-w-2xl">
             {/* Workshop Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFF6D8] text-[#B27600] font-bold text-xs tracking-wider uppercase mb-3 border border-[#F4B400]/40 shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-[#F4B400] animate-pulse" />
-              <span>AEW Machine Tools • Mancheswar Workshop</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EDF7F3] text-[#0D4738] font-bold text-xs tracking-wider uppercase mb-3 border border-emerald-300 shadow-xs">
+              <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
+              <span>Govt. DIC Approved • Small Scale Machinery Portfolio</span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#252525] font-['Outfit'] tracking-tight leading-[1.15]">
-              Featured Industrial Machinery
+              Featured Manufacturing Machinery
             </h2>
 
             <p className="text-[#666666] text-sm sm:text-base lg:text-lg mt-2.5 font-['Plus_Jakarta_Sans'] leading-relaxed">
-              Engineered for zero-deflection continuous stamping, blanking, and hydraulic drawing across high-volume fabrication lines.
+              Indigenous high-efficiency paper plate, dona, and auto-wrinkle buffet thali machinery engineered in Odisha. Ranging from economical crank start-up models to 3-cylinder hydraulic industrial production systems.
             </p>
           </div>
 
@@ -98,9 +101,9 @@ export default function HomeFeaturedMachinery() {
           <div className="flex flex-wrap items-center gap-3">
             <Link
               to="/machinery"
-              className="btn btn-primary inline-flex items-center gap-2 shadow-md hover:shadow-lg text-sm sm:text-base font-bold py-2.5 sm:py-3 px-5 sm:px-6"
+              className="inline-flex items-center gap-2 py-2.5 sm:py-3 px-5 sm:px-6 rounded-xl font-['Outfit'] font-bold text-xs sm:text-sm text-white bg-gradient-to-r from-[#0D4738] to-[#07271E] hover:from-[#145C49] hover:to-[#0D4738] shadow-md hover:shadow-lg transition-all"
             >
-              <span>View All 8 Models</span>
+              <span>View All 8 AEW Machines</span>
               <ChevronRight size={18} />
             </Link>
 
@@ -130,42 +133,42 @@ export default function HomeFeaturedMachinery() {
 
         {/* Interactive Filter & View Bar */}
         <div className="flex flex-wrap items-center justify-between gap-3 mb-8 bg-white border border-[#EAE4D3] p-2.5 sm:p-3 rounded-2xl shadow-xs">
-          {/* Drive Type Filter Tabs */}
+          {/* Industry Filter Tabs */}
           <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto py-1 scrollbar-none w-full sm:w-auto">
             <button
               type="button"
               onClick={() => setActiveTab('All')}
               className={`px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-1.5 whitespace-nowrap ${activeTab === 'All'
-                  ? 'bg-[#252525] text-white shadow-sm'
-                  : 'bg-[#F9F7F1] text-[#666666] hover:bg-[#FFF6D8] hover:text-[#252525]'
+                  ? 'bg-[#0D4738] text-white shadow-sm'
+                  : 'bg-[#F9F7F1] text-[#666666] hover:bg-[#EDF7F3] hover:text-[#0D4738]'
                 }`}
             >
               <Layers size={14} />
-              <span>All Featured ({allFeatured.length})</span>
+              <span>All 8 Models ({allFeatured.length})</span>
             </button>
 
             <button
               type="button"
               onClick={() => setActiveTab('Crank')}
               className={`px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-1.5 whitespace-nowrap ${activeTab === 'Crank'
-                  ? 'bg-[#F28C28] text-white shadow-sm'
-                  : 'bg-[#F9F7F1] text-[#666666] hover:bg-[#FFF2E8] hover:text-[#F28C28]'
+                  ? 'bg-[#0D4738] text-white shadow-sm'
+                  : 'bg-[#F9F7F1] text-[#666666] hover:bg-[#EDF7F3] hover:text-[#0D4738]'
                 }`}
             >
-              <Flame size={14} />
-              <span>Crank Presses (2)</span>
+              <Droplets size={14} />
+              <span>Crank Driven ({crankMachines.length})</span>
             </button>
 
             <button
               type="button"
               onClick={() => setActiveTab('Hydraulic')}
               className={`px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-1.5 whitespace-nowrap ${activeTab === 'Hydraulic'
-                  ? 'bg-[#D99A00] text-white shadow-sm'
-                  : 'bg-[#F9F7F1] text-[#666666] hover:bg-[#FFF6D8] hover:text-[#D99A00]'
+                  ? 'bg-[#C8973E] text-white shadow-sm'
+                  : 'bg-[#F9F7F1] text-[#666666] hover:bg-[#FAF5E8] hover:text-[#C8973E]'
                 }`}
             >
-              <Droplets size={14} />
-              <span>Hydraulic Systems (2)</span>
+              <Flame size={14} />
+              <span>Hydraulic Powered ({hydraulicMachines.length})</span>
             </button>
           </div>
 
@@ -205,8 +208,8 @@ export default function HomeFeaturedMachinery() {
           onScroll={handleScroll}
           className={
             mobileLayout === 'carousel'
-              ? 'flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 xl:gap-6 overflow-x-auto sm:overflow-visible pb-4 sm:pb-0 snap-x snap-mandatory scrollbar-none items-stretch'
-              : 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 xl:gap-6 items-stretch'
+              ? 'flex sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 xl:gap-6 overflow-x-auto sm:overflow-visible pb-4 sm:pb-0 snap-x snap-mandatory scrollbar-none items-stretch'
+              : 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 xl:gap-6 items-stretch'
           }
         >
           {filteredMachines.map((machine) => (
@@ -244,9 +247,9 @@ export default function HomeFeaturedMachinery() {
         {/* Informational Filter Strip */}
         <div className="mt-10 sm:mt-12 p-4 sm:p-5 rounded-2xl bg-white border border-[#EAE4D3] flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs">
           <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 text-center sm:text-left justify-center sm:justify-start">
-            <span className="font-bold text-xs sm:text-sm text-[#252525]">Workshop Inventory:</span>
-            <span className="badge badge-orange font-semibold text-xs">4 Mechanical Crank Presses</span>
-            <span className="badge badge-gold font-semibold text-xs">4 Hydraulic Press Systems</span>
+            <span className="font-bold text-xs sm:text-sm text-[#252525]">Workshop Portfolio:</span>
+            <span className="px-2.5 py-1 rounded-full bg-[#FAF5E8] text-[#A67828] font-bold text-xs">2 Mechanical Crank Presses</span>
+            <span className="px-2.5 py-1 rounded-full bg-[#EDF7F3] text-[#0D4738] font-bold text-xs">6 Hydraulic Press Systems</span>
           </div>
           <Link
             to="/machinery"

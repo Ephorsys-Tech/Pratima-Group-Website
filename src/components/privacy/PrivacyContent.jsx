@@ -5,7 +5,7 @@ import { companyData } from '../../data/companyData';
 export default function PrivacyContent() {
   return (
     <div className="bg-white rounded-3xl border border-[#EFE8D6] shadow-sm p-8 sm:p-14 text-[#252525]">
-      
+
       <div className="border-b border-[#EFE8D6] pb-8 mb-8">
         <span className="badge badge-gold mb-3">Legal Transparency</span>
         <h2 className="text-2xl sm:text-3xl font-extrabold font-['Outfit'] mb-2">
@@ -22,7 +22,7 @@ export default function PrivacyContent() {
             <span className="text-[#D99A00]">1.</span> Introduction & Scope
           </h3>
           <p>
-            Pratima Group of Industry ("we", "our", or "the Group"), headquartered at Mancheswar Industrial Estate, Bhubaneswar, Odisha, operates this website to provide information regarding our industrial machinery manufacturing (AEW Series), retail distribution (Odisha Cart), and hospitality initiatives. We respect your personal privacy and are committed to maintaining the confidentiality of any information you share with us.
+            Pratima Group of Industry ("we", "our", or "the Group"), headquartered at Mancheswar Industrial Estate, Bhubaneswar, Odisha, operates this website to provide information regarding our industrial machinery manufacturing (AEW Series), retail distribution (Odisha Kart), and hospitality initiatives. We respect your personal privacy and are committed to maintaining the confidentiality of any information you share with us.
           </p>
         </div>
 

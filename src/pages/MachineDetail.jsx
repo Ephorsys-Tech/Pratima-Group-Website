@@ -43,12 +43,11 @@ export default function MachineDetail() {
   ];
 
   return (
-    <div className="machine-detail-page w-full">
-      <Breadcrumb items={breadcrumbItems} />
+    <div className="machine-detail-page w-full max-w-full overflow-x-hidden">
       <MachineDetailHero machine={machine} />
 
-      <section className="py-16 bg-[#FFFDF5]">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <section className="py-10 sm:py-16 bg-[#FFFDF5] w-full max-w-full overflow-x-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12">
           <MachineSpecsTable machine={machine} />
           <MachineFeatures machine={machine} />
           <MachineAccessories machine={machine} />

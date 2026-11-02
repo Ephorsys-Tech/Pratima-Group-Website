@@ -9,22 +9,22 @@ import FranchiseSteps from '../components/odisha-cart/FranchiseSteps';
 export default function OdishaCart() {
   const breadcrumbItems = [
     { label: "Businesses", to: "/businesses" },
-    { label: "Odisha Cart", to: "/odisha-cart" }
+    { label: "Odisha Kart", to: "/odisha-cart" }
   ];
 
   return (
     <div className="odisha-cart-page w-full">
-       <Breadcrumb items={breadcrumbItems} />
+      <Breadcrumb items={breadcrumbItems} />
       <OdishaCartHero />
       <RetailCategories />
       <FranchiseOverview />
       <FranchiseSteps />
-      <CTASection 
-        title="Start Your Own Odisha Cart Franchise Store"
+      <CTASection
+        title="Start Your Own Odisha Kart Franchise Store"
         subtitle="Submit your proposed location in Odisha or contact our retail expansion desk directly to schedule an assessment."
         primaryActionText="Submit Franchise Application"
         primaryActionLink="/contact"
-      /> 
+      />
     </div>
   );
 }
