@@ -68,10 +68,18 @@ export default function RetailCategories() {
           ))}
         </div>
 
-        {/* Informational note clarifying no online shopping */}
+        {/* Informational note with online store link */}
         <div className="mt-12 p-4 rounded-xl bg-[#FFF9E6] border border-[#F4B400]/30 text-center max-w-2xl mx-auto">
           <p className="text-xs text-[#805B00] font-medium">
-            ℹ️ <strong>Retail Stores Note:</strong> Products are available exclusively in-store across verified Odisha Kart franchise storefronts and partner retail networks. (No online retail cart or direct checkout).
+            🛒 <strong>Online Ordering & Shopping Portal:</strong> To order products online or explore the e-commerce catalogue, visit our official retail platform at{' '}
+            <a 
+              href="https://myodishakart.com/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="font-bold underline text-[#A67828] hover:text-[#0D4738]"
+            >
+              myodishakart.com
+            </a>.
           </p>
         </div>
       </div>

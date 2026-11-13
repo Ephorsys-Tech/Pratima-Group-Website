@@ -18,7 +18,6 @@ export const companyData = {
 
   contacts: {
     primaryPhone: "+91 94379 76060",
-    secondaryPhone: "+91 98534 37378",
     tollFree: "1800-212-0-211",
     whatsappNumber: "919437976060",
     whatsappDisplay: "+91 94379 76060",
@@ -32,20 +31,11 @@ export const companyData = {
     {
       title: "Registered Head Office & Industrial Unit",
       address: "At - Medical Chhak Kosala, Po - Kosala",
-      city: "Kosala, Dist - Angul",
+      city: "Angul",
       state: "Odisha",
       pincode: "759130",
       type: "Head Office & Machinery Works",
       coordinates: "20.8400, 85.1500"
-    },
-    {
-      title: "Distribution & Capital Office",
-      address: "Plot No. 62, Mancheswar Industrial Estate, Sector-A",
-      city: "Bhubaneswar",
-      state: "Odisha",
-      pincode: "751010",
-      type: "Executive & Logistics Center",
-      coordinates: "20.3168, 85.8456"
     }
   ],
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Home, ArrowRight, Cog, ShoppingBag, PhoneCall, HelpCircle } from 'lucide-react';
+import { Home, ArrowRight, Cog, ShoppingBag, PhoneCall, HelpCircle, ExternalLink } from 'lucide-react';
 
 export default function NotFoundContent() {
   return (
@@ -44,13 +44,16 @@ export default function NotFoundContent() {
             <span>AEW Machinery</span>
           </Link>
 
-          <Link
-            to="/odisha-cart"
+          <a
+            href="https://myodishakart.com/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="p-3 rounded-xl bg-[#FFFDF5] border border-[#EFE8D6] hover:border-[#F4B400] text-xs font-bold text-[#252525] hover:text-[#D99A00] flex items-center justify-center gap-2 transition-colors"
           >
             <ShoppingBag size={15} />
             <span>Odisha Kart</span>
-          </Link>
+            <ExternalLink size={12} className="text-[#888888]" />
+          </a>
 
           <Link
             to="/about"

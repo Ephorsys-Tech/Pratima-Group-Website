@@ -144,13 +144,21 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/odisha-cart" className="group flex items-start gap-2 text-gray-400 hover:text-white transition-colors">
+                  <a 
+                    href="https://myodishakart.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="group flex items-start gap-2 text-gray-400 hover:text-white transition-colors"
+                  >
                     <ArrowRight size={13} className="text-[#C8973E] mt-0.5 shrink-0 group-hover:translate-x-0.5 transition-transform" />
                     <div>
-                      <strong className="text-white block group-hover:text-[#C8973E] transition-colors">Smart Collection / Odisha Kart</strong>
-                      <span className="text-[11px] text-gray-400">Direct FMCG & Supermarket Franchise</span>
+                      <strong className="text-white flex items-center gap-1 group-hover:text-[#C8973E] transition-colors">
+                        <span>Smart Collection / Odisha Kart</span>
+                        <ExternalLink size={11} className="text-gray-400 group-hover:text-[#C8973E]" />
+                      </strong>
+                      <span className="text-[11px] text-gray-400">Direct FMCG & Supermarket (myodishakart.com)</span>
                     </div>
-                  </Link>
+                  </a>
                 </li>
                 <li>
                   <Link to="/restaurant" className="group flex items-start gap-2 text-gray-400 hover:text-white transition-colors">
@@ -182,22 +190,29 @@ export default function Footer() {
                 </div>
 
                 <div className="flex items-start gap-2.5">
-                  <Building size={16} className="text-[#C8973E] mt-0.5 shrink-0" />
-                  <div>
-                    <span className="text-white font-bold block text-[11px]">Plant 2 (Fabrication):</span>
-                    <p className="text-gray-400 text-xs leading-relaxed">{companyData.locations[1].address}, {companyData.locations[1].city}, {companyData.locations[1].state} - {companyData.locations[1].pincode}</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-2.5">
                   <Phone size={16} className="text-[#C8973E] mt-0.5 shrink-0" />
                   <div>
-                    <span className="text-white font-bold block text-[11px]">Direct Lines:</span>
-                    <p className="text-xs">
-                      <a href={`tel:${companyData.contacts.primaryPhone.replace(/\s+/g, '')}`} className="text-gray-300 hover:text-[#C8973E] transition-colors">{companyData.contacts.primaryPhone}</a>
-                      <span className="text-gray-500"> / </span>
-                      <a href={`tel:${companyData.contacts.secondaryPhone.replace(/\s+/g, '')}`} className="text-gray-300 hover:text-[#C8973E] transition-colors">{companyData.contacts.secondaryPhone}</a>
-                    </p>
+                    <span className="text-white font-bold block text-[11px]">Phone & Toll-Free:</span>
+                    <div className="text-xs space-y-0.5">
+                      <div>
+                        <span className="text-gray-400">Toll-Free: </span>
+                        <a 
+                          href={`tel:${companyData.contacts.tollFree.replace(/[^0-9]/g, '')}`} 
+                          className="text-[#C8973E] font-semibold hover:underline"
+                        >
+                          {companyData.contacts.tollFree}
+                        </a>
+                      </div>
+                      <div>
+                        <span className="text-gray-400">Direct: </span>
+                        <a 
+                          href={`tel:${companyData.contacts.primaryPhone.replace(/\s+/g, '')}`} 
+                          className="text-gray-300 hover:text-[#C8973E] transition-colors"
+                        >
+                          {companyData.contacts.primaryPhone}
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -248,7 +263,14 @@ export default function Footer() {
             <span>•</span>
             <Link to="/machinery" className="hover:text-[#C8973E] transition-colors">Machinery</Link>
             <span>•</span>
-            <Link to="/odisha-cart" className="hover:text-[#C8973E] transition-colors">Franchise</Link>
+            <a 
+              href="https://myodishakart.com/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="hover:text-[#C8973E] transition-colors"
+            >
+              Odisha Kart
+            </a>
             <span>•</span>
             <Link to="/contact" className="hover:text-[#C8973E] transition-colors">Contact</Link>
           </div>
