@@ -30,12 +30,6 @@ export default function ContactCards() {
           >
             {companyData.contacts.primaryPhone}
           </a>
-          <a 
-            href={`tel:${companyData.contacts.secondaryPhone.replace(/\s+/g, '')}`} 
-            className="block text-xs font-semibold text-gray-600 hover:underline"
-          >
-            {companyData.contacts.secondaryPhone}
-          </a>
         </div>
       </div>
 

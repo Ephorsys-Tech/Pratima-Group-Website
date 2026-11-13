@@ -3,25 +3,27 @@ import { MapPin, Building, Navigation, ShieldCheck } from 'lucide-react';
 import { companyData } from '../../data/companyData';
 
 export default function PlantLocations() {
+  const isSingle = companyData.locations.length === 1;
+
   return (
     <div className="mt-12 sm:mt-16">
       <div className="text-center max-w-2xl mx-auto mb-10">
         <span className="text-xs font-bold text-[#C8973E] uppercase tracking-wider block mb-1 font-['Outfit']">
-          Verified Registered Locations • Odisha
+          {isSingle ? 'Verified Registered Location • Odisha' : 'Verified Registered Locations • Odisha'}
         </span>
         <h2 className="text-2xl sm:text-3xl font-extrabold text-[#111827] font-['Outfit']">
-          Visit Our Registered Headquarters & Plants
+          {isSingle ? 'Visit Our Registered Headquarters & Works' : 'Visit Our Registered Headquarters & Plants'}
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+      <div className={`grid grid-cols-1 ${isSingle ? 'max-w-2xl mx-auto' : 'md:grid-cols-2'} gap-6 sm:gap-8`}>
         {companyData.locations.map((loc, idx) => (
           <div key={idx} className="bg-white p-6 sm:p-8 rounded-3xl border border-[#E5ECE8] shadow-[0_4px_20px_rgba(13,71,56,0.05)] flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-4">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#FAF5E8] text-[#A67828] border border-[#C8973E]/30 font-['Outfit']">
                   <ShieldCheck size={13} className="text-[#C8973E]" />
-                  {idx === 0 ? "Registered Head Office" : "Distribution & Logistics Center"}
+                  {loc.type || "Registered Head Office"}
                 </span>
                 <span className="text-xs text-gray-500 font-mono">
                   {loc.city}, Odisha
@@ -38,9 +40,7 @@ export default function PlantLocations() {
               </div>
 
               <p className="text-xs text-gray-500 mb-6 leading-relaxed">
-                {idx === 0 
-                  ? "Approved by Govt. of Odisha DIC, Angul (Regd No: 210151100297). GSTIN: 21BIKPM0732J1ZH (M/s Pratima Enterprises). Contact: 1800-212-0-211."
-                  : "Executive facility and supply chain logistics hub supporting regional franchise replenishment and dispatch."}
+                {loc.description || "Approved by Govt. of Odisha DIC, Angul (Regd No: 210151100297). GSTIN: 21BIKPM0732J1ZH (M/s Pratima Enterprises). Contact: 1800-212-0-211."}
               </p>
             </div>
 

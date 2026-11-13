@@ -305,13 +305,15 @@ export default function BusinessesList() {
                   </span>
                 </div>
 
-                <Link
-                  to="/odisha-cart"
+                <a
+                  href="https://myodishakart.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 text-xs sm:text-sm font-bold text-[#A67828] hover:text-[#C8973E] transition-colors"
                 >
-                  <span>Franchise Overview</span>
-                  <ArrowRight size={14} />
-                </Link>
+                  <span>Visit Odisha Kart (myodishakart.com)</span>
+                  <ArrowUpRight size={14} />
+                </a>
               </div>
 
               {/* Main Content Grid: Left Visual Stage & Income Summary | Right Content */}
@@ -432,13 +434,15 @@ export default function BusinessesList() {
 
                   {/* Responsive Action Buttons */}
                   <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 pt-4 border-t border-gray-100 mt-auto">
-                    <Link
-                      to="/odisha-cart"
+                    <a
+                      href="https://myodishakart.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="py-2.5 px-5 rounded-xl font-['Outfit'] font-bold text-xs sm:text-sm text-white bg-gradient-to-r from-[#C8973E] to-[#B3812C] hover:from-[#D4A347] hover:to-[#C8973E] shadow-md flex items-center justify-center gap-2 transition-all"
                     >
-                      <span>Explore Franchise Model</span>
-                      <ArrowRight size={14} />
-                    </Link>
+                      <span>Visit Odisha Kart Portal</span>
+                      <ArrowUpRight size={14} />
+                    </a>
 
                     <a
                       href={`https://wa.me/919437976060?text=${encodeURIComponent('Hello Pratima Group, I am interested in opening a Smart Collection supermarket franchise.')}`}

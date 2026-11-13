@@ -22,7 +22,7 @@ export default function PrivacyContent() {
             <span className="text-[#D99A00]">1.</span> Introduction & Scope
           </h3>
           <p>
-            Pratima Group of Industry ("we", "our", or "the Group"), headquartered at Mancheswar Industrial Estate, Bhubaneswar, Odisha, operates this website to provide information regarding our industrial machinery manufacturing (AEW Series), retail distribution (Odisha Kart), and hospitality initiatives. We respect your personal privacy and are committed to maintaining the confidentiality of any information you share with us.
+            Pratima Group of Industry ("we", "our", or "the Group"), headquartered at Kosala, Angul, Odisha, operates this website to provide information regarding our industrial machinery manufacturing (AEW Series), retail distribution (Odisha Kart), and hospitality initiatives. We respect your personal privacy and are committed to maintaining the confidentiality of any information you share with us.
           </p>
         </div>
 
@@ -82,7 +82,7 @@ export default function PrivacyContent() {
           </p>
           <div className="p-4 rounded-xl bg-[#FFFDF5] border border-[#EFE8D6] text-sm text-[#252525]">
             <p><strong>Pratima Group of Industry — Legal & Administrative Office</strong></p>
-            <p>Plot No. 62, Mancheswar Industrial Estate, Sector-A, Bhubaneswar, Odisha 751010</p>
+            <p>{companyData.locations[0].address}, {companyData.locations[0].city}, {companyData.locations[0].state} - {companyData.locations[0].pincode}</p>
             <p>Email: <a href={`mailto:${companyData.contacts.email}`} className="text-[#D99A00] font-bold underline">{companyData.contacts.email}</a></p>
             <p>Phone: {companyData.contacts.primaryPhone}</p>
           </div>

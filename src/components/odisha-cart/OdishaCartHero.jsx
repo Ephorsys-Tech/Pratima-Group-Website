@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShoppingBag, ArrowRight, Store, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ShoppingBag, ArrowRight, Store, Sparkles, CheckCircle2, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function OdishaCartHero() {
@@ -44,18 +44,20 @@ export default function OdishaCartHero() {
           {/* Action CTAs */}
           <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-8 sm:mb-10">
             <a
-              href="#franchise"
+              href="https://myodishakart.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn btn-primary shadow-lg hover:shadow-xl py-3 px-6 text-sm sm:text-base font-bold flex items-center gap-2"
             >
-              <span>Franchise Opportunities</span>
-              <ArrowRight size={16} />
+              <span>Visit Official Shopping Portal</span>
+              <ExternalLink size={16} />
             </a>
 
             <Link
               to="/contact"
               className="btn btn-secondary bg-white/10 hover:bg-white text-white hover:text-[#0D4738] border-white/20 hover:border-white backdrop-blur-md transition-all py-3 px-6 text-sm sm:text-base font-bold"
             >
-              <span>Distributor Registration</span>
+              <span>Franchise Registration</span>
             </Link>
           </div>
 

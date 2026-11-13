@@ -12,7 +12,8 @@ import {
   Menu,
   X,
   Sparkles,
-  MapPin
+  MapPin,
+  ExternalLink
 } from 'lucide-react';
 import { companyData } from '../../data/companyData';
 import WhatsAppIcon from './WhatsAppIcon';
@@ -175,8 +176,10 @@ export default function Header() {
                       </div>
                     </Link>
 
-                    <Link
-                      to="/odisha-cart"
+                    <a
+                      href="https://myodishakart.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       onClick={() => setBusinessesDropdownOpen(false)}
                       className="p-3 rounded-xl hover:bg-[#F8FAF9] transition-colors flex items-start gap-3.5 group border border-transparent hover:border-[#E5ECE8]"
                     >
@@ -185,18 +188,19 @@ export default function Header() {
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center justify-between">
-                          <span className="font-bold text-sm text-[#111827] group-hover:text-[#108E68]">
-                            Odisha Kart
+                          <span className="font-bold text-sm text-[#111827] group-hover:text-[#108E68] flex items-center gap-1.5">
+                            <span>Odisha Kart</span>
+                            <ExternalLink size={12} className="text-gray-400 group-hover:text-[#108E68]" />
                           </span>
                           <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#E6F9F2] text-[#059669]">
-                            Franchise
+                            myodishakart.com
                           </span>
                         </div>
                         <p className="text-xs text-[#6B7280] mt-0.5 leading-snug">
-                          Regional food, organic FMCG retail & franchise network
+                          Official retail e-commerce & supermarket franchise
                         </p>
                       </div>
-                    </Link>
+                    </a>
 
                     <Link
                       to="/restaurant"
@@ -314,18 +318,24 @@ export default function Header() {
                     <ArrowRight size={14} className="text-[#C8973E]" />
                   </Link>
 
-                  <Link
-                    to="/odisha-cart"
+                  <a
+                    href="https://myodishakart.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setMobileMenuOpen(false)}
                     className="flex items-center justify-between p-3 rounded-xl bg-[#F8FAF9] hover:bg-[#EDF7F3]"
                   >
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-lg bg-[#EDF7F3] text-[#108E68] flex items-center justify-center">
                         <ShoppingBag size={16} />
                       </div>
-                      <span className="text-sm font-bold text-[#111827]">Odisha Kart Franchise</span>
+                      <span className="text-sm font-bold text-[#111827] flex items-center gap-1.5">
+                        <span>Odisha Kart</span>
+                        <ExternalLink size={12} className="text-gray-400" />
+                      </span>
                     </div>
                     <ArrowRight size={14} className="text-[#C8973E]" />
-                  </Link>
+                  </a>
 
                   <Link
                     to="/restaurant"

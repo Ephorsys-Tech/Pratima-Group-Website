@@ -44,7 +44,7 @@ export default function MachineCard({ machine, className = "" }) {
           <img 
             src={machine.image} 
             alt={`${machine.modelCode} ${machine.name}`} 
-            className="h-full w-full object-contain filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.18)] group-hover:scale-108 transition-all duration-500"
+            className="h-full w-full object-contain filter group-hover:scale-108 transition-all duration-500 bg-[#fefefe] "
             loading="lazy"
           />
         </Link>

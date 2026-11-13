@@ -67,18 +67,14 @@ export default function MachineDetailHero({ machine }) {
                     {machine.driveType} Drive
                   </span>
                 </div>
-                <span className="text-[10px] sm:text-[11px] font-semibold text-gray-500 flex items-center gap-1 shrink-0">
-                  <Sparkles size={11} className="text-[#F4B400]" />
-                  <span>Verified OEM</span>
-                </span>
               </div>
 
               {/* Machine Product Image - Ergonomic & Scaled Height */}
-              <div className="w-full h-44 sm:h-52 lg:h-60 xl:h-64 flex items-center justify-center p-2 bg-[#F8FAF9] rounded-xl">
+              <div className="w-full h-44 sm:h-52 lg:h-60 xl:h-77 flex items-center justify-center p-2 bg-[#fefefe] rounded-xl">
                 <img
                   src={machine.image}
                   alt={`${machine.modelCode} ${machine.name}`}
-                  className="max-h-full max-w-full object-contain filter drop-shadow-md group-hover:scale-105 transition-transform duration-500"
+                  className="max-h-full max-w-full object-contain filter  group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
 

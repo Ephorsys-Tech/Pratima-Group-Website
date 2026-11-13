@@ -45,37 +45,10 @@ export default function HomeWhyChooseUs() {
         </div>
 
         {/* Dual Plant Infrastructure Banner */}
-        <div className="mt-16 bg-gradient-to-br from-[#252525] via-[#1C1C1C] to-[#121212] rounded-3xl p-8 sm:p-12 text-white relative overflow-hidden border border-[#F4B400]/30 shadow-2xl">
-          {/* Subtle gold radial ambient */}
-          <div className="absolute top-0 right-0 w-80 h-80 bg-[#F4B400]/10 rounded-full blur-3xl pointer-events-none"></div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-            <div className="lg:col-span-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F4B400]/20 border border-[#F4B400]/40 text-[#F4B400] text-xs font-bold uppercase tracking-wider mb-3">
-                <Factory size={13} />
-                <span>Dual Manufacturing Plants in Odisha</span>
-              </div>
-              <h3 className="text-2xl sm:text-3xl font-extrabold font-['Outfit'] mb-3 text-white">
-                Mancheswar & Khurda Industrial Estates
-              </h3>
-              <p className="text-[#BBBBBB] text-sm sm:text-base leading-relaxed max-w-2xl">
-                Our Mancheswar Plant 1 leads precision machining, assembly, and testing of AEW power presses. Our Khurda Plant 2 operates heavy structural plate fabrication, gantry cranes, and custom profiling bays.
-              </p>
-            </div>
-
-            <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 justify-center">
-              <Link to="/about" className="btn btn-primary text-center justify-center shadow-lg">
-                <span>Learn Our History</span>
-                <ArrowRight size={16} />
-              </Link>
-              <Link to="/contact" className="btn btn-secondary bg-transparent text-white border-[#555] hover:bg-white hover:text-black text-center justify-center">
-                <span>Schedule Plant Visit</span>
-              </Link>
-            </div>
-          </div>
-        </div>
 
       </div>
     </section>
   );
 }
+

@@ -47,7 +47,9 @@ export const businessDivisions = [
     shortTitle: "Smart Collection Supermarket",
     badge: "India's Fastest Growing",
     status: "Active PAN India Franchising",
-    route: "/odisha-cart",
+    route: "https://myodishakart.com/",
+    externalUrl: "https://myodishakart.com/",
+    isExternal: true,
     image: "/images/odisha_cart.jpg",
     subtitle: "A Unit of Pratima Group — Building the Best Smart Collection Franchise in India",
     tagline: "Customer Trust is Everything | Direct from Company to Consumer",
@@ -94,8 +96,8 @@ export const businessDivisions = [
       "3 Months Free Accounting Service: GST, ITC, 2-A/2-B reconciliation, and bank reconciliation included",
       "Smart Collection Welcome Kit: Branded T-shirt, cap, promotional offer goods & social media marketing"
     ],
-    ctaText: "Explore Franchise",
-    ctaLink: "/odisha-cart"
+    ctaText: "Visit Odisha Kart Portal",
+    ctaLink: "https://myodishakart.com/"
   },
   {
     id: "restaurant",
